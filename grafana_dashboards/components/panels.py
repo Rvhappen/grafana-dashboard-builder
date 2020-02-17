@@ -88,6 +88,8 @@ class Graph(PanelsItemBase):
                     to_add.update(settings)
                     overrides.append(to_add)
             panel_json['seriesOverrides'] = overrides
+        if 'alerts' in self.data:
+            panel_json['alert'] = self.data['alerts']
         self._create_component(panel_json, Links, self.data)
         if (('leftYAxisLabel' in self.data
             or 'grid' in self.data and ('leftMin' in grid_data or 'leftMax' in grid_data))
