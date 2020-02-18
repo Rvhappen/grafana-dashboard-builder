@@ -50,4 +50,4 @@ class GrafanaExporter(DashboardExporter):
             body.update({'folderId': dashboard_data['folderId']})
 
         logger.info("Uploading dashboard '%s' to %s", dashboard_name, self._host)
-        self._connection.make_request('/api/dashboards/db', body)
+        self._connection.make_request('/api/dashboards/import', body)
